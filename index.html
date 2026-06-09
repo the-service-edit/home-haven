@@ -46,39 +46,35 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 /* TODO: Replace all .img-placeholder elements with real project photography */
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:background 0.4s,box-shadow 0.4s}
-.nav.scrolled{background:rgba(250,248,245,0.95);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.06)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(74,32,16,0.08);transition:box-shadow 0.4s}
+.nav.scrolled{box-shadow:0 2px 12px rgba(74,32,16,0.1)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:12px}
 .nav-logo img{height:44px;width:auto}
-.nav-logo-text{font-size:16px;font-weight:700;letter-spacing:-0.3px;color:var(--warm-white);line-height:1.2;transition:color 0.4s}
-.nav-logo-text span{display:block;font-size:11px;font-weight:400;letter-spacing:0.5px;color:rgba(250,248,245,0.7);transition:color 0.4s}
-.nav.scrolled .nav-logo-text{color:var(--deep-brown)}
-.nav.scrolled .nav-logo-text span{color:var(--stone)}
+.nav-logo-text{font-size:16px;font-weight:700;letter-spacing:-0.3px;color:var(--deep-brown);line-height:1.2}
+.nav-logo-text span{display:block;font-size:11px;font-weight:400;letter-spacing:0.5px;color:var(--stone)}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
-.nav-links a{font-size:13px;font-weight:500;letter-spacing:0.3px;color:rgba(250,248,245,0.85);transition:color 0.4s}
-.nav-links a:hover{color:var(--warm-white)}
-.nav.scrolled .nav-links a{color:#5A4A3A}
-.nav.scrolled .nav-links a:hover{color:var(--amber)}
-.nav-cta{font-size:13px;font-weight:600;letter-spacing:0.3px;color:var(--warm-white);border:1.5px solid rgba(250,248,245,0.5);padding:10px 24px;border-radius:2px;transition:background 0.3s,color 0.3s,border-color 0.4s}
-.nav-cta:hover{background:rgba(250,248,245,0.1);border-color:var(--warm-white)}
-.nav.scrolled .nav-cta{color:var(--deep-brown);border-color:var(--deep-brown)}
-.nav.scrolled .nav-cta:hover{background:var(--deep-brown);color:var(--warm-white)}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:0.3px;color:#5A4A3A;transition:color 0.3s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{font-size:13px;font-weight:600;letter-spacing:0.3px;color:var(--deep-brown);border:1.5px solid var(--deep-brown);padding:10px 24px;border-radius:2px;transition:background 0.3s,color 0.3s}
+.nav-cta:hover{background:var(--deep-brown);color:var(--warm-white)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;width:26px;padding:4px 0}
-.nav-toggle span{display:block;height:1.5px;background:var(--warm-white);transition:transform 0.3s,opacity 0.3s,background 0.4s}
-.nav.scrolled .nav-toggle span{background:var(--deep-brown)}
+.nav-toggle span{display:block;height:1.5px;background:var(--deep-brown);transition:transform 0.3s,opacity 0.3s}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(26,18,10,0.92) 0%,rgba(26,18,10,0.75) 35%,rgba(26,18,10,0.15) 65%,transparent 100%)}
-.hero-content{position:relative;z-index:2;padding:160px 0 120px;max-width:560px}
-.hero-logo{height:clamp(160px,22vw,260px);width:auto;margin-bottom:32px;filter:brightness(1.1)}
+.hero-overlay{position:absolute;inset:0;background:rgba(26,18,10,0.55)}
+.hero-content{position:relative;z-index:2;padding:160px 0 120px;max-width:100%;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero-logo{height:clamp(220px,30vw,380px);width:auto;margin-bottom:32px}
 .hero-sub{margin-bottom:44px}
 .hero-sub p{font-size:clamp(15px,1.6vw,18px);color:rgba(250,248,245,0.65);line-height:1.9;font-weight:300}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
 .hero-scroll{display:block;margin-top:48px;color:rgba(250,248,245,0.4);font-size:24px;animation:bobDown 2s ease-in-out infinite}
+.sticky-call{position:fixed;bottom:28px;right:28px;z-index:99;display:flex;align-items:center;gap:10px;padding:14px 28px;background:var(--amber);color:var(--warm-white);font-size:14px;font-weight:600;letter-spacing:0.5px;border-radius:50px;box-shadow:0 4px 20px rgba(74,32,16,0.3);transition:background 0.3s,transform 0.2s;text-decoration:none}
+.sticky-call:hover{background:var(--burnt-orange);transform:translateY(-2px)}
+.sticky-call svg{width:18px;height:18px;fill:currentColor}
 @keyframes bobDown{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 .btn-primary{display:inline-block;padding:16px 36px;background:var(--warm-white);color:var(--deep-brown);font-size:13px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;border-radius:2px;transition:background 0.3s,transform 0.2s}
 .btn-primary:hover{background:var(--sand);transform:translateY(-1px)}
@@ -217,7 +213,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .nav-toggle{display:flex}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--warm-white);padding:32px 28px;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
   .hero-content{padding:140px 0 80px}
-  .hero-overlay{background:linear-gradient(to right,rgba(26,18,10,0.95) 0%,rgba(26,18,10,0.8) 60%,rgba(26,18,10,0.4) 100%)}
+  .hero-overlay{background:rgba(26,18,10,0.6)}
   .about-grid{grid-template-columns:1fr;gap:48px}
   .about-img .img-placeholder,.about-img img{width:300px;height:300px}
   .project-grid{grid-template-columns:1fr}
@@ -272,7 +268,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="hero-sub">
       <p>Beautiful renovations.</p>
       <p>Premium finishes.</p>
-      <p>Perth WA.</p>
+      <p>Brisbane and Sunshine Coast.</p>
     </div>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Start Your Project</a>
@@ -510,6 +506,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     </div>
   </div>
 </footer>
+
+<a href="tel:0472900573" class="sticky-call">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+  Call Now
+</a>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Home Haven Carpentry and Construction","description":"Custom carpentry, renovations and outdoor spaces designed for modern family living across Brisbane and the Sunshine Coast.","url":"https://www.homehavencarpentry.com.au","areaServed":[{"@type":"City","name":"Brisbane"},{"@type":"City","name":"Sunshine Coast"}],"serviceType":["Carpentry","Decking","Renovations","Pergolas","Outdoor Living","Kitchen Renovations","Custom Joinery"],"address":{"@type":"PostalAddress","addressRegion":"QLD","addressCountry":"AU"}}
