@@ -127,7 +127,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .process-left{position:sticky;top:120px}
 .process-left h2{font-size:clamp(32px,4vw,48px);font-weight:300;letter-spacing:-0.8px;color:var(--deep-brown);margin-bottom:24px}
 .process-left p{font-size:16px;color:var(--stone);line-height:1.8;margin-bottom:40px;max-width:420px}
-.process-left .img-placeholder{width:320px;height:320px;border-radius:50%;border:3px solid var(--amber)}
+.process-left .img-placeholder,.process-circle-img{width:320px;height:320px;border-radius:50%;border:3px solid var(--amber);object-fit:cover}
 .process-right{display:flex;flex-direction:column}
 .process-step{display:grid;grid-template-columns:48px 1fr;gap:24px;padding:40px 0;border-bottom:1px solid var(--sand)}
 .process-step:first-child{padding-top:0}
@@ -215,7 +215,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .why-grid{grid-template-columns:1fr;gap:36px}
   .process-layout{grid-template-columns:1fr;gap:48px}
   .process-left{position:static}
-  .process-left .img-placeholder{width:240px;height:240px;margin:0 auto}
+  .process-left .img-placeholder,.process-circle-img{width:240px;height:240px;margin:0 auto}
   .testimonial-card{grid-template-columns:1fr}
   .testimonial-card:nth-child(even) .testimonial-img{order:0}
   .testimonial-img .img-placeholder{min-height:280px}
@@ -362,8 +362,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <p class="eyebrow">How It Works</p>
         <h2>From first conversation to finished space.</h2>
         <p>A straightforward process built on clear communication and no surprises. We keep you informed and involved at every stage.</p>
-        <!-- TODO: Replace with real construction/in-progress photo -->
-        <div class="img-placeholder warm-tone"></div>
+        <img src="img/services.jpg" alt="Home Haven Carpentry fencing work" class="process-circle-img">
       </div>
       <div class="process-right fade-in">
         <div class="process-step">
