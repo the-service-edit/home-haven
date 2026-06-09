@@ -51,25 +51,36 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .nav-inner{display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:12px}
 .nav-logo img{height:44px;width:auto}
-.nav-logo-text{font-size:16px;font-weight:700;letter-spacing:-0.3px;color:var(--deep-brown);line-height:1.2}
-.nav-logo-text span{display:block;font-size:11px;font-weight:400;letter-spacing:0.5px;color:var(--stone)}
+.nav-logo-text{font-size:16px;font-weight:700;letter-spacing:-0.3px;color:var(--warm-white);line-height:1.2;transition:color 0.4s}
+.nav-logo-text span{display:block;font-size:11px;font-weight:400;letter-spacing:0.5px;color:rgba(250,248,245,0.7);transition:color 0.4s}
+.nav.scrolled .nav-logo-text{color:var(--deep-brown)}
+.nav.scrolled .nav-logo-text span{color:var(--stone)}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
-.nav-links a{font-size:13px;font-weight:500;letter-spacing:0.3px;color:#5A4A3A;transition:color 0.3s}
-.nav-links a:hover{color:var(--amber)}
-.nav-cta{font-size:13px;font-weight:600;letter-spacing:0.3px;color:var(--deep-brown);border:1.5px solid var(--deep-brown);padding:10px 24px;border-radius:2px;transition:background 0.3s,color 0.3s}
-.nav-cta:hover{background:var(--deep-brown);color:var(--warm-white)}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:0.3px;color:rgba(250,248,245,0.85);transition:color 0.4s}
+.nav-links a:hover{color:var(--warm-white)}
+.nav.scrolled .nav-links a{color:#5A4A3A}
+.nav.scrolled .nav-links a:hover{color:var(--amber)}
+.nav-cta{font-size:13px;font-weight:600;letter-spacing:0.3px;color:var(--warm-white);border:1.5px solid rgba(250,248,245,0.5);padding:10px 24px;border-radius:2px;transition:background 0.3s,color 0.3s,border-color 0.4s}
+.nav-cta:hover{background:rgba(250,248,245,0.1);border-color:var(--warm-white)}
+.nav.scrolled .nav-cta{color:var(--deep-brown);border-color:var(--deep-brown)}
+.nav.scrolled .nav-cta:hover{background:var(--deep-brown);color:var(--warm-white)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;width:26px;padding:4px 0}
-.nav-toggle span{display:block;height:1.5px;background:var(--deep-brown);transition:transform 0.3s,opacity 0.3s}
+.nav-toggle span{display:block;height:1.5px;background:var(--warm-white);transition:transform 0.3s,opacity 0.3s,background 0.4s}
+.nav.scrolled .nav-toggle span{background:var(--deep-brown)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0}
-.hero-bg .img-placeholder{height:100%}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,15,5,0.7) 0%,rgba(30,15,5,0.2) 50%,rgba(30,15,5,0.08) 100%)}
-.hero-content{position:relative;z-index:2;padding-bottom:80px;padding-top:120px;max-width:800px}
-.hero h1{font-size:clamp(42px,7vw,80px);font-weight:300;line-height:1.05;color:var(--warm-white);letter-spacing:-1.5px;margin-bottom:24px}
-.hero p{font-size:clamp(15px,1.8vw,18px);color:rgba(250,248,245,0.8);max-width:560px;line-height:1.7;margin-bottom:40px;font-weight:300}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(26,18,10,0.92) 0%,rgba(26,18,10,0.75) 35%,rgba(26,18,10,0.15) 65%,transparent 100%)}
+.hero-content{position:relative;z-index:2;padding:160px 0 120px;max-width:560px}
+.hero-title{font-size:clamp(52px,8vw,96px);font-weight:700;line-height:0.95;color:var(--warm-white);letter-spacing:-2px;text-transform:uppercase;margin-bottom:32px}
+.hero-title span{display:block;font-weight:300;font-size:clamp(36px,5.5vw,64px);letter-spacing:-1px}
+.hero-sub{margin-bottom:44px}
+.hero-sub p{font-size:clamp(15px,1.6vw,18px);color:rgba(250,248,245,0.65);line-height:1.9;font-weight:300}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.hero-scroll{display:block;margin-top:48px;color:rgba(250,248,245,0.4);font-size:24px;animation:bobDown 2s ease-in-out infinite}
+@keyframes bobDown{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 .btn-primary{display:inline-block;padding:16px 36px;background:var(--warm-white);color:var(--deep-brown);font-size:13px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;border-radius:2px;transition:background 0.3s,transform 0.2s}
 .btn-primary:hover{background:var(--sand);transform:translateY(-1px)}
 .btn-secondary{display:inline-block;padding:16px 36px;border:1.5px solid rgba(250,248,245,0.5);color:var(--warm-white);font-size:13px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;border-radius:2px;transition:background 0.3s,border-color 0.3s}
@@ -206,7 +217,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .nav-links{display:none}
   .nav-toggle{display:flex}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--warm-white);padding:32px 28px;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
-  .hero-content{padding-bottom:60px}
+  .hero-content{padding:140px 0 80px}
+  .hero-overlay{background:linear-gradient(to right,rgba(26,18,10,0.95) 0%,rgba(26,18,10,0.8) 60%,rgba(26,18,10,0.4) 100%)}
   .about-grid{grid-template-columns:1fr;gap:48px}
   .about-img .img-placeholder,.about-img img{width:300px;height:300px}
   .project-grid{grid-template-columns:1fr}
@@ -253,16 +265,20 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <section class="hero">
   <div class="hero-bg">
-    <img src="img/hero.jpg" alt="Outdoor entertaining area built by Home Haven Carpentry and Construction" style="width:100%;height:100%;object-fit:cover">
+    <img src="img/hero.jpg" alt="Finished kitchen renovation by Home Haven Carpentry and Construction">
   </div>
   <div class="hero-overlay"></div>
   <div class="container hero-content">
-    <h1>Built for the way Australians live.</h1>
-    <p>Custom carpentry, renovations and outdoor spaces designed for modern family living across Brisbane and the Sunshine Coast.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">View Our Work</a>
-      <a href="#contact" class="btn-secondary">Request a Quote</a>
+    <div class="hero-title">Home Haven<span>Carpentry</span></div>
+    <div class="hero-sub">
+      <p>Beautiful renovations.</p>
+      <p>Premium finishes.</p>
+      <p>Perth WA.</p>
     </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start Your Project</a>
+    </div>
+    <a href="#about" class="hero-scroll" aria-label="Scroll down">&#8595;</a>
   </div>
 </section>
 
