@@ -62,15 +62,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .nav-toggle span{display:block;height:1.5px;background:var(--deep-brown);transition:transform 0.3s,opacity 0.3s}
 
 /* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative}
-.hero-left{background:var(--deep-brown);display:flex;flex-direction:column;justify-content:center;padding:80px 60px;position:relative;overflow:hidden}
-.hero-left::after{content:'';position:absolute;right:-60px;bottom:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(192,144,48,0.1)}
-.hero-right{position:relative;overflow:hidden}
-.hero-right img{width:100%;height:100%;object-fit:cover}
-.hero-logo{height:200px;width:auto;margin-bottom:32px;max-width:80%}
-.hero-sub{margin-bottom:32px}
-.hero-sub p{font-size:clamp(16px,1.6vw,19px);color:rgba(250,248,245,0.6);line-height:1.8;font-weight:300}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:rgba(26,18,10,0.25)}
+.hero-card{position:relative;z-index:2;background:rgba(250,248,245,0.92);backdrop-filter:blur(16px);border-radius:8px;padding:60px 56px;text-align:center;max-width:480px;width:90%;box-shadow:0 12px 48px rgba(26,18,10,0.2)}
+.hero-logo{width:220px;height:auto;margin:0 auto 24px}
+.hero-sub{margin-bottom:28px}
+.hero-sub p{font-size:16px;color:var(--stone);line-height:1.8;font-weight:400}
+.hero-actions{display:flex;justify-content:center}
 .sticky-call{position:fixed;bottom:28px;right:28px;z-index:99;display:flex;align-items:center;gap:10px;padding:14px 28px;background:var(--amber);color:var(--warm-white);font-size:14px;font-weight:600;letter-spacing:0.5px;border-radius:50px;box-shadow:0 4px 20px rgba(74,32,16,0.3);transition:background 0.3s,transform 0.2s;text-decoration:none}
 .sticky-call:hover{background:var(--burnt-orange);transform:translateY(-2px)}
 .sticky-call svg{width:18px;height:18px;fill:currentColor}
@@ -211,10 +211,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .nav-links{display:none}
   .nav-toggle{display:flex}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--warm-white);padding:32px 28px;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-left{padding:120px 28px 60px;align-items:center;text-align:center}
-  .hero-logo{height:160px}
-  .hero-right{height:50vh}
+  .hero{min-height:100vh}
+  .hero-card{padding:48px 32px}
+  .hero-logo{width:180px}
   .about-grid{grid-template-columns:1fr;gap:48px}
   .about-img .img-placeholder,.about-img img{width:300px;height:300px}
   .project-grid{grid-template-columns:1fr}
@@ -260,7 +259,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </nav>
 
 <section class="hero">
-  <div class="hero-left">
+  <div class="hero-bg">
+    <img src="img/hero.jpg" alt="Finished project by Home Haven Carpentry and Construction">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-card">
     <img src="img/logo.png" alt="Home Haven Carpentry and Construction" class="hero-logo">
     <div class="hero-sub">
       <p>Beautiful renovations.</p>
@@ -270,9 +273,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Start Your Project</a>
     </div>
-  </div>
-  <div class="hero-right">
-    <img src="img/hero.jpg" alt="Finished project by Home Haven Carpentry and Construction">
   </div>
 </section>
 
