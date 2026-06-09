@@ -101,7 +101,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .project-info span{font-size:13px;color:rgba(250,248,245,0.7);font-weight:300}
 
 /* SERVICES */
-.services{padding:140px 0}
+.services{padding:140px 0;position:relative;background:url('img/services.jpg') center/cover no-repeat fixed}
+.services::before{content:'';position:absolute;inset:0;background:rgba(250,248,245,0.88)}
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--sand);border:1px solid var(--sand);border-radius:4px;overflow:hidden;margin-top:60px}
 .service-card{background:var(--warm-white);padding:48px 32px;transition:background 0.3s;cursor:pointer;display:block}
 .service-card:hover{background:var(--amber-light)}
@@ -294,27 +295,27 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="project-grid">
       <!-- TODO: Replace with real project photography -->
       <div class="project-card fade-in">
-        <div class="img-placeholder warm-tone"></div>
-        <div class="project-info"><h3>Coastal Entertaining Deck</h3><span>Sunshine Coast</span></div>
+        <img src="img/project-1.jpg" alt="Bathroom renovation with niche and nib wall framing" style="width:100%;height:500px;object-fit:cover">
+        <div class="project-info"><h3>Bathroom Renovation</h3><span>Niche and nib wall framed, window changed, walls sheeted, vanity fitted</span></div>
       </div>
       <div class="project-card fade-in">
-        <div class="img-placeholder amber-tone"></div>
-        <div class="project-info"><h3>Modern Pergola and Outdoor Kitchen</h3><span>North Brisbane</span></div>
+        <img src="img/project-2.jpg" alt="Dall installation by Home Haven Carpentry" style="width:100%;height:420px;object-fit:cover">
+        <div class="project-info"><h3>Dall Installation</h3><span>Internal or external, supplied and installed</span></div>
       </div>
       <div class="project-card fade-in">
-        <div class="img-placeholder dark-tone"></div>
-        <div class="project-info"><h3>Full Home Renovation</h3><span>Paddington</span></div>
+        <img src="img/project-3.jpg" alt="Deck removal and rebuild finished in Ekodeck Essentials" style="width:100%;height:420px;object-fit:cover">
+        <div class="project-info"><h3>Deck Removal and Rebuild</h3><span>Finished in Ekodeck Essentials</span></div>
       </div>
       <div class="project-card fade-in">
-        <div class="img-placeholder brown-tone"></div>
-        <div class="project-info"><h3>Timber Kitchen and Joinery</h3><span>New Farm</span></div>
+        <img src="img/project-4.jpg" alt="Hybrid waterproof flooring installation" style="width:100%;height:500px;object-fit:cover">
+        <div class="project-info"><h3>Hybrid Waterproof Flooring</h3><span>Durable, waterproof and kid-safe</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="services" id="services">
-  <div class="container">
+  <div class="container" style="position:relative;z-index:1">
     <div class="section-header fade-in">
       <div>
         <p class="eyebrow">What We Do</p>
