@@ -92,10 +92,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .section-header h2{font-size:clamp(32px,4vw,48px);font-weight:300;letter-spacing:-0.8px;color:var(--deep-brown)}
 .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .project-card{position:relative;overflow:hidden;border-radius:4px;cursor:pointer}
-.project-card .img-placeholder{height:420px;transition:transform 0.6s ease}
-.project-card:hover .img-placeholder{transform:scale(1.03)}
-.project-card:nth-child(1) .img-placeholder{height:500px}
-.project-card:nth-child(4) .img-placeholder{height:500px}
+.project-card img,.project-card .img-placeholder{width:100%;height:420px;object-fit:cover;transition:transform 0.6s ease}
+.project-card:hover img,.project-card:hover .img-placeholder{transform:scale(1.03)}
+.project-card:nth-child(1) img,.project-card:nth-child(1) .img-placeholder{height:500px}
+.project-card:nth-child(4) img,.project-card:nth-child(4) .img-placeholder{height:500px}
 .project-info{position:absolute;bottom:0;left:0;right:0;padding:32px;background:linear-gradient(to top,rgba(30,15,5,0.7) 0%,transparent 100%)}
 .project-info h3{font-size:20px;font-weight:500;color:var(--warm-white);margin-bottom:4px}
 .project-info span{font-size:13px;color:rgba(250,248,245,0.7);font-weight:300}
@@ -295,19 +295,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="project-grid">
       <!-- TODO: Replace with real project photography -->
       <div class="project-card fade-in">
-        <img src="img/project-1.jpg" alt="Bathroom renovation with niche and nib wall framing" style="width:100%;height:500px;object-fit:cover">
+        <img src="img/project-1.jpg" alt="Bathroom renovation with niche and nib wall framing">
         <div class="project-info"><h3>Bathroom Renovation</h3><span>Niche and nib wall framed, window changed, walls sheeted, vanity fitted</span></div>
       </div>
       <div class="project-card fade-in">
-        <img src="img/project-2.jpg" alt="Dall installation by Home Haven Carpentry" style="width:100%;height:420px;object-fit:cover">
-        <div class="project-info"><h3>Dall Installation</h3><span>Internal or external, supplied and installed</span></div>
+        <img src="img/project-2.jpg" alt="Door installation by Home Haven Carpentry">
+        <div class="project-info"><h3>Door Installation</h3><span>Internal or external, supplied and installed</span></div>
       </div>
       <div class="project-card fade-in">
-        <img src="img/project-3.jpg" alt="Deck removal and rebuild finished in Ekodeck Essentials" style="width:100%;height:420px;object-fit:cover">
+        <img src="img/project-3.jpg" alt="Deck removal and rebuild finished in Ekodeck Essentials">
         <div class="project-info"><h3>Deck Removal and Rebuild</h3><span>Finished in Ekodeck Essentials</span></div>
       </div>
       <div class="project-card fade-in">
-        <img src="img/project-4.jpg" alt="Hybrid waterproof flooring installation" style="width:100%;height:500px;object-fit:cover">
+        <img src="img/project-4.jpg" alt="Hybrid waterproof flooring installation">
         <div class="project-info"><h3>Hybrid Waterproof Flooring</h3><span>Durable, waterproof and kid-safe</span></div>
       </div>
     </div>
@@ -407,16 +407,16 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="testimonial-card fade-in">
       <div class="testimonial-content">
         <blockquote>"Highly recommend! Communication was excellent from start to finish. He was very accommodating throughout the whole process. The quality of workmanship is outstanding. This is the second job he's completed for me, and both experiences have been fantastic. Thank you Mark"</blockquote>
-        <cite>Michelle Wicks<span>Returning Client</span></cite>
+        <cite>Michelle Wicks<span>Bathroom Install</span></cite>
       </div>
-      <div class="testimonial-img"><div class="img-placeholder warm-tone"></div></div>
+      <div class="testimonial-img"><img src="img/michelle.jpg" alt="Michelle Wicks project" style="width:100%;height:100%;min-height:480px;object-fit:cover"></div>
     </div>
     <div class="testimonial-card fade-in">
       <div class="testimonial-content">
         <blockquote>"Cannot rate Mark highly enough! We had a great experience dealing with him from the initial quote all the way to the end result. He was professional, very easy to communicate with, and respectful of our space. The fence he built was fantastic and great quality."</blockquote>
-        <cite>Laura M<span>Fencing Installation</span></cite>
+        <cite>Laura M<span>Flooring Install</span></cite>
       </div>
-      <div class="testimonial-img"><div class="img-placeholder brown-tone"></div></div>
+      <div class="testimonial-img"><img src="img/laura.jpg" alt="Laura M project" style="width:100%;height:100%;min-height:480px;object-fit:cover"></div>
     </div>
   </div>
 </section>
