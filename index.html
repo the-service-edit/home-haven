@@ -83,7 +83,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .about-text p:last-of-type{margin-bottom:36px}
 .text-link{font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--deep-brown);border-bottom:1.5px solid var(--deep-brown);padding-bottom:3px;transition:color 0.3s,border-color 0.3s}
 .text-link:hover{color:var(--amber);border-color:var(--amber)}
-.about-img .img-placeholder{height:600px;border-radius:4px}
+.about-img{display:flex;justify-content:center;align-items:center}
+.about-img .img-placeholder,.about-img img{width:480px;height:480px;border-radius:50%;object-fit:cover}
 
 /* PROJECTS */
 .projects{padding:100px 0 140px;background:var(--white)}
@@ -110,13 +111,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .service-card:hover .arrow{transform:translateX(4px)}
 
 /* WHY */
-.why{padding:140px 0;background:var(--deep-brown);color:var(--warm-white)}
+.why{padding:140px 0;background:var(--deep-brown);color:var(--warm-white);position:relative;overflow:hidden}
+.why::after{content:'';position:absolute;right:-60px;top:-60px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(192,144,48,0.12)}
 .why h2{font-size:clamp(32px,4vw,48px);font-weight:300;letter-spacing:-0.8px;margin-bottom:16px}
 .why .lead{font-size:17px;color:var(--stone);max-width:540px;margin-bottom:72px;font-weight:300;line-height:1.8}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px}
 .why-item h4{font-size:15px;font-weight:600;margin-bottom:10px;color:var(--warm-white)}
 .why-item p{font-size:14px;color:#A89888;line-height:1.7}
-.why-item .marker{width:32px;height:2px;background:var(--amber);margin-bottom:20px}
+.why-item .marker{width:10px;height:10px;border-radius:50%;background:var(--amber);margin-bottom:20px}
 
 /* PROCESS */
 .process{padding:140px 0}
@@ -124,7 +126,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .process-left{position:sticky;top:120px}
 .process-left h2{font-size:clamp(32px,4vw,48px);font-weight:300;letter-spacing:-0.8px;color:var(--deep-brown);margin-bottom:24px}
 .process-left p{font-size:16px;color:var(--stone);line-height:1.8;margin-bottom:40px;max-width:420px}
-.process-left .img-placeholder{height:360px;border-radius:4px}
+.process-left .img-placeholder{width:320px;height:320px;border-radius:50%}
 .process-right{display:flex;flex-direction:column}
 .process-step{display:grid;grid-template-columns:48px 1fr;gap:24px;padding:40px 0;border-bottom:1px solid var(--sand)}
 .process-step:first-child{padding-top:0}
@@ -146,7 +148,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .testimonial-content cite span{display:block;font-weight:400;color:var(--stone);margin-top:2px;font-size:13px}
 
 /* CTA BAND */
-.cta-band{padding:120px 0;background:var(--amber);text-align:center}
+.cta-band{padding:120px 0;background:var(--amber);text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:400px;height:400px;border-radius:50%;border:1px solid rgba(250,248,245,0.15)}
+.cta-band::after{content:'';position:absolute;left:-120px;bottom:-100px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(250,248,245,0.1)}
 .cta-band h2{font-size:clamp(32px,5vw,56px);font-weight:300;color:var(--warm-white);letter-spacing:-1px;margin-bottom:16px}
 .cta-band p{font-size:17px;color:rgba(250,248,245,0.8);margin-bottom:40px;font-weight:300}
 .btn-white{display:inline-block;padding:18px 44px;background:var(--warm-white);color:var(--deep-brown);font-size:13px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;border-radius:2px;transition:background 0.3s,transform 0.2s}
@@ -203,14 +207,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--warm-white);padding:32px 28px;gap:20px;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
   .hero-content{padding-bottom:60px}
   .about-grid{grid-template-columns:1fr;gap:48px}
-  .about-img .img-placeholder{height:360px}
+  .about-img .img-placeholder,.about-img img{width:300px;height:300px}
   .project-grid{grid-template-columns:1fr}
   .project-card .img-placeholder,.project-card:nth-child(1) .img-placeholder,.project-card:nth-child(4) .img-placeholder{height:320px}
   .services-grid{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr;gap:36px}
   .process-layout{grid-template-columns:1fr;gap:48px}
   .process-left{position:static}
-  .process-left .img-placeholder{height:280px}
+  .process-left .img-placeholder{width:240px;height:240px;margin:0 auto}
   .testimonial-card{grid-template-columns:1fr}
   .testimonial-card:nth-child(even) .testimonial-img{order:0}
   .testimonial-img .img-placeholder{min-height:280px}
@@ -272,7 +276,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <a href="#contact" class="text-link">Start Your Project</a>
       </div>
       <div class="about-img fade-in">
-        <img src="img/story.jpg" alt="Home Haven craftsmanship" style="width:100%;height:100%;object-fit:cover;border-radius:4px">
+        <img src="img/story.jpg" alt="Home Haven craftsmanship" style="width:480px;height:480px;object-fit:cover;border-radius:50%">
       </div>
     </div>
   </div>
